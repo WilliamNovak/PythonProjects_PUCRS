@@ -9,6 +9,6 @@ try:
 except:
     print('Valor inválido!')
 
-v = (3/4) * pi * (r**3)
+v = (4/3) * pi * (r**3)
 
 print('O volume da esfera é ', v)
