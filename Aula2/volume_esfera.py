@@ -4,9 +4,8 @@ import math
 pi = math.pi
 
 print('Vamos calcular o volume de uma esfera! :)')
-print('Informe o raio da esfera: ')
 try:
-    r = int(input())
+    r = float(input('Informe o raio da esfera: '))
 except:
     print('Valor inválido!')
 
