@@ -2,9 +2,9 @@
 # Para realizar a conversão use a fórmula c = 5/9 (f-32)
 
 try:
-    f = int(input('Informe uma temperatura em Fahrenheit: '))
+    f = float(input('Informe uma temperatura em Fahrenheit: '))
 except:
-    print('Temperatura deve ser um valor inteiro!')
+    print('Temperatura deve ser numérico!')
 
 c = 5/9 * (f - 32)
 
