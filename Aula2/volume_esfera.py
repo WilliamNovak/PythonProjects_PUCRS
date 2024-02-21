@@ -10,5 +10,6 @@ except:
     print('Valor inválido!')
 
 v = (4/3) * pi * (math.pow(r,3))
+a = 4 * pi * (math.pow(r,2))
 
-print('O volume da esfera é ', v)
+print('O volume da esfera é ', v, ' e sua área é ', a)
