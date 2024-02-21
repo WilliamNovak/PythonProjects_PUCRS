@@ -1,4 +1,4 @@
-# Calcular o volume de uma esfere
+# Calcular o volume e a area de uma esfera
 # v = 4/3 pi.r³
 import math
 pi = math.pi
