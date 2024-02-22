@@ -6,13 +6,7 @@ try:
 except:
     print('Valor inválido!')
 
-if a%4 == 0:
-    if a%100 == 0:
-        if a%400 == 0:
-            print(a,'é bissexto.')
-        else:
-            print(a,'não é bissexto.')
-    else:
-        print(a,'é bissexto.')
+if (a%400 == 0) or (a%4 == 0 and a%100 != 0):
+    print(a,'é bissexto.')
 else:
     print(a,'não é bissexto.')
