@@ -14,18 +14,23 @@ def retangulo(tamHoriz, tamVert):
         bob.right(90)
     
 def casa():
-    retangulo(150, 120)
+    retangulo(110, 80)
     bob.left(60)
-    poligono(150, 3)
+    poligono(110, 3)
     bob.penup()
     bob.right(60)
     bob.forward(30)
     bob.right(90)
-    bob.forward(70)
+    bob.forward(50)
     bob.left(90)
     bob.pendown()
-    retangulo(40, 50)
+    retangulo(20, 30)
 
 
 bob = turtle.Turtle()
-casa()
+for x in range(-300, 250, 120):
+    bob.penup()
+    bob.setposition(x,0)
+    bob.setheading(0)
+    bob.pendown()
+    casa()
