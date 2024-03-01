@@ -2,7 +2,7 @@ import random
 palavras = ["amarelo", "amiga", "amor", "ave", "bala", "bela", "bolo", "branco", "cama", "caneca", "celular", "clube", "copo", "doce", "elefante", "escola", "estojo", "faca", "foto", "garfo", "geleia", "girafa", "janela", "limonada", "meia", "noite", "ovo", "pai", "parque", "passarinho", "peixe", "pijama", "rato", "umbigo"]
 
 def sorteio():
-    return random.choice(palavras)
+    return random.choice(palavras).upper()
 
 def forca(vidas):
     if vidas == 0:
@@ -98,14 +98,15 @@ while jogoAtivo:
   # 5. Aguarda a digitação de uma letra válida (ainda não escolhida)
   valida = False
   while not valida:
-    letra = input("Escolha uma letra: ")
+    letra = input("Escolha uma letra: ").upper()
     if letra not in letras:
       valida = True
     else:
       print("Esta letra já foi escolhida!")
   
   # Registra a letra digitada
-  letras += letra
+  if letras == '': letras += letra
+  else: letras += '-' + letra
 
   # 6. Verifica se a letra está na palavra:
   if letra in palavra:
