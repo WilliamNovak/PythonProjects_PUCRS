@@ -1,5 +1,5 @@
 import random
-palavras = ["amarelo", "amiga", "amor", "ave", "bala", "bela", "bolo", "branco", "cama", "caneca", "celular", "clube", "copo", "doce", "elefante", "escola", "estojo", "faca", "foto", "garfo", "geleia", "girafa", "janela", "limonada", "meia", "noite", "ovo", "pai", "parque", "passarinho", "peixe", "pijama", "rato", "umbigo"]
+palavras = ["amarelo", "amiga", "amor", "ave", "bala", "bela", "bola", "bolo", "branco", "cama", "caneca", "celular", "clube", "computador", "copo", "doce", "elefante", "escola", "estojo", "faca", "foto", "garfo", "geleia", "girafa", "janela", "limonada", "meia", "noite", "ornitorrinco", "ovo", "pai", "parque", "passarinho", "peixe", "pijama", "rato", "rinoceronte", "umbigo", "zebra"]
 
 def sorteio():
     return random.choice(palavras).upper()
