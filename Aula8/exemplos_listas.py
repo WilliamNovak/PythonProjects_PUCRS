@@ -34,3 +34,9 @@ lista2.pop(2)
 print(lista2)
 lista2.remove('gato')
 print(lista2)
+
+lista5 = [1, 2, 3, 4, 5]
+quadrados = [item ** 2 for item in lista5]
+print(quadrados)
+quadrados2 = [item ** 2 for item in lista5 if item%2 == 0]
+print(quadrados2)
