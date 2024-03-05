@@ -6,9 +6,13 @@ for cont in range(30):
 
 print(f'Lista original: {lista}')
 
+lista.sort()
+lista.reverse()
+
 maiores = []
-for cont in range(10):
-    maiores.append(max(lista))
-    lista.remove(max(lista))
+indice = 0
+while indice < 10:
+    maiores.append(lista[indice])
+    indice += 1
 
 print(f'Lista dos 10 maiores: {maiores}')
