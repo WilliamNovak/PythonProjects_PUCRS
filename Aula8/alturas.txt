@@ -1,0 +1,5 @@
+maria - 1.54
+joao - 1.75
+theo - 1.88
+fabio - 1.76
+otavio - 1.65
