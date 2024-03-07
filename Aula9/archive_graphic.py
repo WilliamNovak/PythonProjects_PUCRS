@@ -50,3 +50,5 @@ map3 = folium.Map(location=[36.7783,-119.4179], zoom_start=6, min_zoom=5)
 aux2 = [[aux[1],aux[0],aux[7]] for aux in dados]
 
 HeatMap(aux2, min_opacity=0.1).add_to(map3) # Mostra o mapa
+
+map3 # Mostra o mapa
