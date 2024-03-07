@@ -17,3 +17,15 @@ latitudes = [aux[1] for aux in dados]
 plt.plot(longitudes, latitudes, 'bo')
 #plt.scatter(longitudes, latitudes, s=1)
 plt.show()
+
+# Mapa com o Exemplo Acima
+import folium
+
+# Cria um mapa com as coordenadas e zoom
+map = folium.Map(location=[36.7783,-119.4179], zoom_start=6, min_zoom=5)
+
+for aux in dados:
+    # Para cada ponto, cria um marcador e adiciona no mapa
+    folium.CircleMarker(radius=1, location=[aux[1],aux[0]]).add_to(map)
+
+map # Mostra o mapa
