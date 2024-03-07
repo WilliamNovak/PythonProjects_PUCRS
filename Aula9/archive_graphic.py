@@ -29,3 +29,16 @@ for aux in dados:
     folium.CircleMarker(radius=1, location=[aux[1],aux[0]]).add_to(map)
 
 map # Mostra o mapa
+
+# Mapa com clustering (agrupamento) usando plugin
+from folium.plugins import MarkerCluster
+
+map = folium.Map(location=[36.7783,-119.4179], zoom_start=6, min_zoom=5)
+
+marker_cluster = MarkerCluster().add_to(map)
+
+for aux in dados:
+    # Para cada ponto, cria um marcador e adiciona no mapa
+    folium.CircleMarker(radius=1, location=[aux[1],aux[0]]).add_to(marker_cluster)
+
+map # Mostra o mapa
