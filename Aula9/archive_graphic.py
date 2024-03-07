@@ -33,12 +33,20 @@ map # Mostra o mapa
 # Mapa com clustering (agrupamento) usando plugin
 from folium.plugins import MarkerCluster
 
-map = folium.Map(location=[36.7783,-119.4179], zoom_start=6, min_zoom=5)
+map2 = folium.Map(location=[36.7783,-119.4179], zoom_start=6, min_zoom=5)
 
-marker_cluster = MarkerCluster().add_to(map)
+marker_cluster = MarkerCluster().add_to(map2)
 
 for aux in dados:
-    # Para cada ponto, cria um marcador e adiciona no mapa
     folium.CircleMarker(radius=1, location=[aux[1],aux[0]]).add_to(marker_cluster)
 
-map # Mostra o mapa
+map2 # Mostra o mapa
+
+# Mapa de calor (HeatMap)
+from folium.plugins import HeatMap
+
+map3 = folium.Map(location=[36.7783,-119.4179], zoom_start=6, min_zoom=5)
+
+aux2 = [[aux[1],aux[0],aux[7]] for aux in dados]
+
+HeatMap(aux2, min_opacity=0.1).add_to(map3) # Mostra o mapa
