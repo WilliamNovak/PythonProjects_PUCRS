@@ -11,6 +11,7 @@ def geraTabuleiro():
         tabuleiro.append(linha)
     return tabuleiro
 
+# Percorre os dados da matriz e desenha o jogo da velha com os dados
 def desenhaTabuleiro(tabuleiro):
     print('\n----------------- Jogo da Velha -----------------')
     print()
@@ -26,11 +27,13 @@ def desenhaTabuleiro(tabuleiro):
         if i != 2: print('\t     -----------------------')
     print('\n-------------------------------------------------')
 
+# Funcao para validar linhas e colunas informadas
 def valida(valor):
     if valor >= 0 and valor <= 2:
         return True
     return False
 
+# Jogada do usuario - Informa, valida e preenche posicao no jogo
 def jogaUsuario(tabuleiro):
     print()
     try: linha = int(input('\tInforme a linha: '))
@@ -48,6 +51,7 @@ def jogaUsuario(tabuleiro):
     
     tabuleiro[linha][coluna] = 'X'
 
+# Sorteia jogada do computador
 def jogaComputador(tabuleiro):
     # Sortei posicao do computador ate achar disponivel
     linha = random.randint(0,2)
@@ -58,6 +62,7 @@ def jogaComputador(tabuleiro):
     
     tabuleiro[linha][coluna]="O"
 
+# Funcao para verificar se alguem venceu em linha
 def verificaVencedorLinha(tabuleiro, caracter):
     for linha in tabuleiro:
         cont = 0
@@ -69,6 +74,7 @@ def verificaVencedorLinha(tabuleiro, caracter):
         if cont==3: return True
     return False
 
+# Funcao para verificar se alguem venceu em coluna
 def verificaVencedorColuna(tabuleiro, caracter):
     col = 0
     while col <= 2:
@@ -84,6 +90,7 @@ def verificaVencedorColuna(tabuleiro, caracter):
         col = col + 1
     return False
 
+# Funcao para verificar se alguem venceu na diagonal
 def verificaVencedorDiagonal(tabuleiro, caracter):
     # Verifica primeira diagonal
     cont = 0
@@ -101,6 +108,7 @@ def verificaVencedorDiagonal(tabuleiro, caracter):
 
     return False
 
+# Verifica se houve algum vencedor
 def verificaVencedor(tabuleiro, caracter):
     resultado = verificaVencedorLinha(tabuleiro,caracter)
     if resultado == True and caracter == 'X': return 1
@@ -113,6 +121,7 @@ def verificaVencedor(tabuleiro, caracter):
     if resultado == True and caracter == 'O': return 2
     return 0
 
+# Controla o jogo da velha
 def jogoDaVelha():
     # Gera e mostra tabuleiro
     tab = geraTabuleiro()
@@ -147,11 +156,13 @@ def jogoDaVelha():
         print("\tParabéns, você venceu!")
     return vencedor
 
+# Grava vencedor no arquivo
 def gravaVencedor(nome, arquivo):
     arq = open(arquivo, 'a')
     arq.write(nome + '\n')
     arq.close
 
+# Le os vencedores do arquivo em uma lista
 def leVencedores(arquivo):
     try:
         arq = open(arquivo,"r")
@@ -162,12 +173,14 @@ def leVencedores(arquivo):
         vencedores.append(linha[:-1])
     return vencedores
 
+# Escreve a lista dos vencedores
 def escreveLista(lista):
     print("\nVencedores:")
     if lista==[]: print("Nao há vencedores ainda")
     for item in lista:
         print(item)
 
+# Reproduz programa
 while True:
     print(" \n---- M E N U ---- ")
     print("1 - Jogar ")
